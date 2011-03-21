@@ -1,0 +1,3 @@
+<% @captcha_image ||= CaptchaUtil::random_image %>
+$("#captcha_validation").val("<%= escape_javascript( @captcha_image.gsub(/\..+$/,'') ) %>");
+$("#captcha_img").html("<%= escape_javascript( image_tag('/system/captcha/' + @captcha_image) ) %>");

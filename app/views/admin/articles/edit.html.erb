@@ -1,0 +1,16 @@
+<h3 class='path'>编辑文章</h1>
+
+<% form_for(@article,:url => admin_articles_url(@article),:html => {:multipart => true}) do |f| %>
+  <%= f.error_messages %>
+
+  <%= render :partial => "form",:locals => {:f => f} %>
+
+  <tr>
+    <td colspan=3>
+      <%= f.submit '更新' %>
+    </td>
+  </tr>
+<% end %>
+
+<%= link_to 'Show', @article %> |
+<%= link_to 'Back', articles_path %>

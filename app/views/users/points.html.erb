@@ -1,0 +1,9 @@
+当前积分
+<%= current_user.points %>
+
+
+积分明细
+
+<% current_user.points_log.each do |log|%>
+  <%= log.desc %>
+<%end%>

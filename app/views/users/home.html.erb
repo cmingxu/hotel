@@ -1,0 +1,39 @@
+
+<div id="user_sider">
+	<div class="modtit"><span>&nbsp;</span>商户后台管理</div>
+<div class="menu_mod">
+	<ul class="user_menu a2">
+		<li id="usermenu_index" class="current"><a href="/user_home">我的聚买卖</a></li>
+		<li id="usermenu_orders"><a href="/invites">我的邀请</a></li>
+		<li id="usermenu_orders"><a href="/points">我的积分</a></li>
+		<li id="usermenu_orders"><a href="/credits">我的余额</a></li>
+		<li id="usermenu_orders"><a href="/orders">我的订单</a></li>
+		<li id="usermenu_tickets"><a href="/ships">收货地址</a></li>
+		<li id="usermenu_credits"><a href="/credits/user_index">我的购买咨询</a></li>
+		<li id="usermenu_tickets"><a href="/tickets/user_index">我发表的评论</a></li>
+		<li id="usermenu_tickets"><a href="/home">个人资料</a></li>
+		<li><a href="/passwords">修改密码</a></li>
+		<li id="usermenu_setting"><a href="/users/setting">帐户设置</a></li>
+	</ul>
+</div>
+</div>
+
+<%= current_user.nick%>
+<%= current_user.email %>
+
+<%= image_tag current_user.avatar.url(:thumb) %>
+
+
+<% form_for :user, current_user,:url => user_url(current_user),:html => {:method => :put,:multipart => true} do |f|%>
+  昵称
+  <%= f.text_field :nick %><br>
+  头像
+  <%= f.file_field :avatar%>
+  <%= f.submit "更新"%>
+<% end %>
+
+下面链接邀请朋友
+<%= text_field_tag "",Setting.domain_name + "/signup?invite_by=#{current_user.id}"%>
+
+
+

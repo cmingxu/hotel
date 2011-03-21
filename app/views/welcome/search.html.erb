@@ -1,0 +1,15 @@
+<h3>关于 '<%= params[:keywords] %>' 的商品/品牌</h3>
+<h4>相关品牌:</h4>
+<% @brands.each do |brand| %>
+	<a href="/brands/<%= brand.id %>"><%= brand.name %></a><br />
+<% end %>
+
+<h4>相关商品:</h4>
+<% @products.each do |product| %>
+	<a href="/products/<%= product.id %>"><%= product.title %></a><br />
+<% end %>
+
+<% if @products.size == 0 and @brands.size == 0 %>
+	<h4>很抱歉，没有任何和"<%= params[:keywords] %>"相关的商品</h4><br />
+	<h4>或许你也愿意看看下面这些?</h4>
+<% end %>

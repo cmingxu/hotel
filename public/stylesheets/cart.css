@@ -1,0 +1,87 @@
+/*order*/
+.order_flow{float: left;background-image: url(../images/order_flow.gif);width: 960px;height:32px;line-height: 32px;margin: 15px 0 0 0;overflow: hidden;}
+#order_flow_1{background-position: 0 0;}
+#order_flow_2{background-position: 0 -32px;}
+#order_flow_3{background-position: 0 -64px;}
+
+.j_table{float:left;width: 100%;margin: 10px 0 10px 0;border-collapse: separate;border-bottom: none;text-align: center;}
+.j_table th{background: #efefef;border-bottom: solid 1px #E2E2E2;border-right: solid 1px #fff;border-top: solid 1px #fff;padding: 3px 5px;font-weight: bold;color: #000;}
+.j_table td{padding: 7px 5px;border-bottom: 1px solid #CCC;background: #fff;}
+.j_table .pic {text-align: left;vertical-align: middle;}
+.j_table .pic img {width: 45px;height: 45px;margin-right: 10px;vertical-align: middle;}
+
+.from_deal{
+	background: #C90809;
+	padding: 1px;
+	color: #fff;
+}
+.is_present{
+	background: #000;
+	padding: 1px;
+	color: #fff;
+}
+#cart_tit{
+	float: left;
+	width: 100%;
+	margin-bottom: -10px;
+}
+#cart_box{
+	float: left;
+	width: 918px;
+	margin: 0 auto 10px;
+	padding: 10px 20px 30px 20px;
+	border: solid 1px #d7d7d7;
+}
+#total_info{
+	float: left;
+	width: 100%;
+	text-align: right;
+	border-bottom: solid 1px #d7d7d7;
+	margin-bottom: 20px;
+	padding-bottom: 5px;
+}
+#cart_tip{
+	float: left;
+	text-align: left;
+	width: 938px;
+	padding: 10px;
+	background: #f3f3f3;
+	border: solid 1px #d7d7d7;
+}
+.total_price_info{
+	font-size: 14px;
+	font-weight: bold;
+}
+.total_price{
+	font-size: 20px;
+	font-weight: bold;
+	color: #C90809;
+}
+#cart_more{
+	float: left;
+	height: 30px;
+	line-height: 30px;
+	width: 400px;
+}
+#cart_more a{
+	color: #336699;
+}
+#check_bnt_box{
+	float: right;
+}
+/* 步进 */
+.flow-steps {overflow: hidden; margin: 0px 0 15px 0;}
+.flow-steps .num3 li {width: 305px;}
+.flow-steps .num4 li {width: 222px;}
+.flow-steps .num5 li {width: 175px;}
+.flow-steps .num6 li {width: 143px;}
+.flow-steps li {float: left; background: #e4e4e4 url(../images/flow_steps_bg.png) no-repeat 100% 0; font-size: 14px; font-weight: bold; height: 23px; line-height: 23px; text-align: center; color: #404040; padding: 0 15px 0 0; overflow: hidden;}
+.flow-steps li span,.flow-steps li strong {display: block;}
+.flow-steps li .first {background: #e4e4e4 url(../images/flow_steps_bg.png) no-repeat -12px -69px;}
+.flow-steps li.last {background-position: 100% -138px;}
+.flow-steps li.current {background-color: #f60; color: #fff;}
+.flow-steps li.current .first {background-color: #f60; background-position: -12px -92px;}
+.flow-steps li.current-prev {background-position: 100% -23px!important;}
+.flow-steps li.done {background-color: #ffe6ba; background-position: 100% -46px; color: #f60;}
+.flow-steps li.done .first {background-color: #ffe6ba; background-position: -12px -115px;}
+.flow-steps li.last-current {background-color: #f60; color: #fff; background-position: 100% -161px;}

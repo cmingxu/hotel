@@ -1,0 +1,23 @@
+<p>
+  <b>Slug:</b>
+  <%=h @page.slug %>
+</p>
+
+
+<p>
+  <b>Content:</b>
+  <%= @page.content %>
+</p>
+
+<p>
+  <b>Meta:</b>
+  <%=h @page.meta %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @page.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_page_path(@page) %> 

@@ -1,0 +1,32 @@
+<h1>Listing rooms</h1>
+
+<table>
+  <tr>
+    <th>Price</th>
+    <th>Online price</th>
+    <th>Price with breakfirst</th>
+    <th>Breakfirst price</th>
+    <th>Bed price</th>
+    <th>Service price</th>
+    <th>Quantity</th>
+  </tr>
+
+<% @rooms.each do |room| %>
+  <tr>
+    <td><%=h room.price %></td>
+    <td><%=h room.online_price %></td>
+    <td><%=h room.price_with_breakfirst %></td>
+    <td><%=h room.breakfirst_price %></td>
+    <td><%=h room.bed_price %></td>
+    <td><%=h room.service_price %></td>
+    <td><%=h room.quantity %></td>
+    <td><%= link_to 'Show', room %></td>
+    <td><%= link_to 'Edit', edit_room_path(room) %></td>
+    <td><%= link_to 'Destroy', room, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New room', new_room_path %>

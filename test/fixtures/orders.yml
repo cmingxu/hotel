@@ -1,0 +1,63 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  total_price: 9.99
+  transfer_fee: 9.99
+  products_price: 9.99
+  remark: MyText
+  quantity: 1
+  pay_method: MyString
+  pay_bank: MyString
+  deliver_company: MyString
+  deliver_code: MyString
+  payment_time: 2011-02-27 20:16:50
+  deliver_time: 2011-02-27 20:16:50
+  receive_time: 2011-02-27 20:16:50
+  ship_name: MyString
+  ship_province: MyString
+  ship_city: MyString
+  ship_address: MyString
+  ship_zip: MyString
+  ship_mobile: MyString
+  ship_tel: MyString
+  order_number: MyString
+  post_day_type: MyString
+
+two:
+  total_price: 9.99
+  transfer_fee: 9.99
+  products_price: 9.99
+  remark: MyText
+  quantity: 1
+  pay_method: MyString
+  pay_bank: MyString
+  deliver_company: MyString
+  deliver_code: MyString
+  payment_time: 2011-02-27 20:16:50
+  deliver_time: 2011-02-27 20:16:50
+  receive_time: 2011-02-27 20:16:50
+  ship_name: MyString
+  ship_province: MyString
+  ship_city: MyString
+  ship_address: MyString
+  ship_zip: MyString
+  ship_mobile: MyString
+  ship_tel: MyString
+  order_number: MyString
+  post_day_type: MyString
+
+
+
+
+# == Schema Information
+#
+# Table name: orders
+#
+#  id           :integer(4)      not null, primary key
+#  order_number :string(255)
+#  price        :string(255)
+#  state        :string(255)
+#  created_at   :datetime
+#  updated_at   :datetime
+#
+

@@ -1,0 +1,29 @@
+<h3 class="path">分类列表</h3>
+
+<table class="j_table">
+  <tr>
+		<th>ID</th>
+    <th>Name</th>
+    <th>Ancestry</th>
+		<th>上级分类</th>
+		<th>该分类下的所有产品数量</th>
+		<th>操作</th>
+  </tr>
+
+<% @categories.each do |category| %>
+  <tr>
+		<td><%=h category.id %></td>
+    <td><%=h category.name %></td>
+    <td><%=h category.ancestry %></td>
+		<td><%=h Category.find(category.parent_id).name if category.ancestry %></td>
+		<td><%= category.products.size %></td>
+    <td><%= link_to '详细', admin_category_path(category) %> | 
+    <%= link_to '编辑', edit_admin_category_path(category) %> | 
+    <%= link_to '删除', admin_category_path(category), :confirm => '确定要删除分类么?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br /><br />
+
+<%= link_to '创建新分类', new_admin_category_path %>

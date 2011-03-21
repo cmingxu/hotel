@@ -1,0 +1,16 @@
+<h3 class='path'>修改<%= @page.slug%></h3>
+
+<% form_for(@page,:url => admin_page_path(@page),:html => {:multipart => true}) do |f| %>
+  <%= f.error_messages %>
+  <table class='j_table'>
+
+  <%= render :partial => 'form',:locals => {:f => f}%>
+  <tr>
+    <td colspan=2>
+    <%= f.submit '更新' %>
+  </td>
+  </tr>
+</table>
+<% end %>
+
+<%= link_to '预览', @page,:target => "_blank" %> 

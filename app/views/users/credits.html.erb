@@ -1,0 +1,15 @@
+
+当前余额：<%= current_user.credits %>
+余额明细：　
+
+<% current_user.credits_log.each do |log|%>
+  <%= log.desc %>
+<%end%>
+
+
+我想充值
+
+<% form_tag "/users/iwantcharge", {:target => "_blank"} do %>
+  <%= text_field_tag "credit","100.00"%>
+  <%= submit_tag "提交"%>
+<%end%>

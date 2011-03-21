@@ -1,0 +1,70 @@
+<% content_for :add_javascript_css do %> 
+  <%= javascript_include_tag 'formValidator' %>
+  <%= stylesheet_link_tag 'login.css', :media => 'screen, projection'%>
+  <%= stylesheet_link_tag 'validator.css', :media => 'screen, projection'%>
+<% end %>
+
+<% form_for resource_name, resource, :url => registration_path(resource_name), :html => {:id=> "form1"} do |f| -%>
+  <div id="loginbox">
+    <table id="login_header">
+      <tr><th><img src="/images/reg_title.gif" /></th><td>您提供的所有信息，绝不会被公开或用作其他用途，请放心填写。</td></tr>
+    </table>
+    <table id="login" class="form">
+      <tr>
+        <th style="height:auto;"></th>
+        <td><%= f.error_messages %></td>
+      </tr>
+      <tr>
+        <th>邮箱:</th><td class="l_input">
+          <%= f.text_field :email %><span id="user_emailTip"></span></td>
+      </tr>
+      <tr>
+        <th>密码:</th><td class="l_input"><%= f.password_field :password %><span id="user_passwordTip"></span></td>
+      </tr>
+      <tr>
+        <th>确认密码:</th><td class="l_input"><%= f.password_field :password_confirmation %><span id="user_password_confirmationTip"></div></td>
+      </tr>
+      <tr><th>验证码:</th><td class="l_input"><%= captcha_block %>
+          <span>&nbsp;<a href="/welcome/change_capcha" class="blue get">看不清？换一张</a></span></td></tr>
+      <tr><th style="height:35px;"></th><td class="gray" style="line-height:35px;"><input type="checkbox" checked="checked" id="agreement_input" name="agreement">&nbsp;已阅读并接受&nbsp;<a href="#" target="_blank" class="blue">《bid用户协议》</a></td></tr>
+      <tr><td></td>
+        <td>
+          <input type="submit" value="注&nbsp;册" name="commit" id="user_submit" class="reglogin_btn">
+      </td></tr>
+    </table>
+    <div id="login_right" class="gray">
+      已有bid帐号?			
+      <a href="/users/sign_in" title="登录" class="sidebtn blue"><span>登&nbsp;录</span></a>
+    </div>
+  </div>
+<% end -%>
+
+<script type="text/javascript" charset="utf-8">
+  $.formValidator.initConfig({formid:"form1",onerror:function(msg){alert('您的注册信息有误，请您检查！');}});
+  $("#user_email").formValidator({onshow:"请输入邮箱",onfocus:"请输入常用邮箱",oncorrect:"&nbsp;"}).inputValidator().regexValidator({regexp:"^\\w+((-\\w+)|(\\.\\w+))*\\@[A-Za-z0-9]+((\\.|-)[A-Za-z0-9]+)*\\.[A-Za-z0-9]+$",onerror:"邮箱格式不对"})
+  .ajaxValidator({
+type : "get",
+url : "/welcome/checkemail",
+success : function(data){	
+if( data == "1" ){
+return true;
+}else{
+return false;
+}
+},
+onerror : "该邮箱已被注册",
+onwait : "正在校验邮箱..."
+});
+$("#user_password").formValidator({onshow:"请输入密码",onfocus:"设置4位以上的密码",oncorrect:"&nbsp;"}).inputValidator({min:4,empty:{leftempty:false,rightempty:false,emptyerror:"密码不能有空格"},onerror:"密码格式错误"});
+$("#user_password_confirmation").formValidator({onshow:"请输入重复密码",onfocus:"请再次输入密码",oncorrect:"&nbsp;"}).inputValidator({min:3,empty:{leftempty:false,rightempty:false,emptyerror:"密码不能有空格"},onerror:"密码格式错误"}).compareValidator({desid:"user_password",operateor:"=",onerror:"密码不一致"});
+$("#agreement_input").formValidator({onshow:"",onfocus:"",oncorrect:""}).functionValidator({
+fun:function(val,elem){
+if($('#agreement_input').attr("checked")==true){
+return true;
+}else{
+alert("您必须同意我们的用户协议才能注册。")
+}
+}
+});
+
+</script>

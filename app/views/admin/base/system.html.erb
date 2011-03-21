@@ -1,0 +1,23 @@
+<h3 class="path">系统管理</h3>
+<p>
+当前注册用户数: <%= @users.size %><br />
+当前管理员数: <%= @admins.size %><br />
+当前订单总数: <%= @admins %><br />
+当前产品数: <%= @products.size %><br />
+</p>
+<p>
+	<h4>当前管理员:</h4>
+	<table class="j_table">
+		<tr><th>名称</th><th>权限</th><th>状态</th><th>产品数</th><th>团购数</th><th>操作</th></tr>
+		<% @admins.each do |admin| %>
+		<tr>
+			<td><%= admin.nick || admin.email %></td>
+			<td><%= admin.role %></td>
+			<td><%= admin.role %></td>
+			<td>09-16</td>
+			<td>nnasu</td>
+			<td>禁用 | 启用 | 删除 | 修改</td>
+		</tr>
+		<% end %>
+	</table>
+</p>

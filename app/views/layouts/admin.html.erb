@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Language" content="utf-8" />
+  <link rel="bookmark" href="favicon.ico" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <title></title>
+  <%= stylesheet_link_tag 'site.css', :media => 'screen, projection'%>
+  <%= stylesheet_link_tag 'site_admin.css', :media => 'screen, projection'%>
+  <%= javascript_include_tag "jquery-1.4.3.min" %>
+  <script src="/javascripts/kindeditor/kindeditor.js?1298209333" type="text/javascript"></script>
+  <script src="/javascripts/kindeditor/kindeditor_config.js?1300345221" type="text/javascript"></script>
+
+
+  <% if protect_against_forgery? %>
+    <script type='text/javascript'>
+      //<![CDATA[
+    window._auth_token_name = "<%= request_forgery_protection_token %>";
+    window._auth_token = "<%= form_authenticity_token %>";
+    //]]>
+    </script>
+  <% end %>
+
+</head>
+<body>
+  <div id="header">
+    <div id="logo1"><a href="/"><h1>XX酒店后台</h1></a></div>
+    <div id="user_nav" class="t_gray">
+      <%= render(:partial => "shared/user_session_indicator") %>
+    </div>
+  </div>
+  <% if @navtag %>
+    <script type="text/javascript" charset="utf-8">
+      $('#nav .current').removeClass('current');
+      $('#<%= @navtag %>').addClass('current');
+      </script>
+    <% end %>
+
+    <div id="content">
+      <div id="sider">
+        <div class="menutit"><span>&nbsp;&nbsp;</span>后台管理菜单</div>
+        <div class="menu_mod">
+          <ul class="menu">
+            <li><a href="/admin">后台管理首页</a></li>
+            <li><a href="/admin/orders">订房管理</a></li>
+            <li><a href="/admin/articles">新闻管理</a></li>
+            <li><a href="/admin/users">用户管理</a></li>
+          </ul>
+        </div>
+        <div class="menutit"><span>&nbsp;&nbsp;</span>功能菜单</div>
+        <div class="menu_mod">
+          <ul class="menu">
+            <li><a href="/admin/pages/basic">酒店介绍(主页)</a></li>
+            <li><a href="/admin/pages/room">客房设施</a></li>
+            <li><a href="/admin/pages/food">餐饮设施</a></li>
+            <li><a href="/admin/pages/meeting">会议设施</a></li>
+            <li><a href="/admin/pages/sports">娱乐设施</a></li>
+            <li><a href="/admin/images">酒店图片</a></li>
+            <li><a href="/admin/pages/contact">联系我们</a></li>
+
+          </ul>
+        </div>
+      </div>
+      <div id="cont">
+           <%= yield :layout %>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+    <div id="footer" class="clear">
+      <span class="copyright">
+        Copyright © 2010-2011 Bid. All rights reserved.
+      </span>
+    </div>
+    <%= yield :javascript %>
+  </body>
+</html>
+

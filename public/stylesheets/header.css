@@ -1,0 +1,206 @@
+/* project bid */
+#page_top{
+	width: 960px;
+	height:20px;
+	margin: auto;
+}
+#header{
+	width:960px;
+	height:132px;
+	padding: 0 0px;
+	margin:0px auto 10px;
+}
+#nav_box{margin: 0 auto;position:relative;width: 100%;z-index: 100;}
+#content{
+	width:960px;
+	width:962px !important;
+	margin:10px auto;
+}
+#footer{
+ 	width:940px;
+ 	width:960px !important;
+ 	border-top: solid 3px #e3e3e3;
+ 	padding: 0px 0;
+ 	margin-top: 0px;
+ 	margin-bottom: 10px;
+ 	margin-right: auto;
+ 	margin-left: auto;
+}
+.copyright{float: left;width: 100%;line-height: 20px;padding: 10px 0;text-align: center;color: #999;}
+
+
+/* ---- */
+#user_nav {float: right; font-size: 12px; margin: 0px 0px 0 0;}
+#logo a{
+	float: left;
+	display: block;
+	width: 390px;
+	height: 52px;
+	background-position: -0px -0px;
+}
+#header_right a{
+	float: right;
+	display: block;
+	width: 250px;
+	height: 52px;
+	background-position: -390px -0px;
+}
+#places_list{
+	float: left;
+	width: 960px;
+	height: 90px;
+}
+#places_list li{
+	
+}
+#places_list a{
+	float: left;
+	height: 90px;
+	text-decoration: none;
+	display: block;
+}
+.ketin a{width: 95px;background-position: -0px -390px;}
+.ketin a:hover{background-position: -0px -480px;}
+.woshi a{width: 110px;background-position: -95px -390px;}
+.woshi a:hover{background-position: -95px -480px;}
+.chufan a{width: 110px;background-position: -205px -390px;}
+.chufan a:hover{background-position: -205px -480px;}
+.gongzuoshi a{width: 120px;background-position: -315px -390px;}
+.gongzuoshi a:hover{background-position: -315px -480px;}
+.yushi a{width: 115px;background-position: -435px -390px;}
+.yushi a:hover{background-position: -435px -480px;}
+.dengguang a{width: 105px;background-position: -550px -390px;}
+.dengguang a:hover{background-position: -550px -480px;}
+.qiang a{width: 115px;background-position: -655px -390px;}
+.qiang a:hover{background-position: -655px -480px;}
+.ertongfan a{width: 100px;background-position: -770px -390px;}
+.ertongfan a:hover{background-position: -770px -480px;}
+.chexiang a{width: 85px;background-position: -870px -390px;}
+.chexiang a:hover{background-position: -870px -480px;}
+
+.scroll_div {
+    background: url("/images/scroll.png") no-repeat scroll center top transparent;
+    bottom: 200px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: block;
+    height: 65px;
+    right: 5px;
+    position: fixed;
+    width: 21px;
+    z-index: 1;
+}
+
+#nav { width: 960px; height: 36px;  margin: 0 auto;background: #ca111a;}
+#nav_list {float: left; font-size: 14px; font-weight: bold;margin: 5px; line-height: 26px;}
+#nav_list li {float: left;display: inline; margin: 0 7px 0 0px;}
+#nav_list a {float: left; margin: 0; padding: 0 0 0 10px; text-decoration: none;color: #fff;}
+#nav_list a span {float: left; display: block;  padding: 0px 20px 0px 6px;cursor: pointer;}
+#nav_list a:hover, #nav .current a {color: #ca111a;background: #fff;}
+#nav_list a:hover span, #nav .current a span {}
+
+#nav_cart{
+	float: right;
+	background: url(../images/cart.gif) no-repeat;
+	height: 32px;
+	width: 170px;
+	margin: 4px 7px 0 0;
+	line-height: 29px;
+	position: relative;
+}
+a.nav_showcart{
+	float: left;
+	display: block;
+	height: 32px;
+	width: 120px;
+	text-align: center;
+	text-decoration: none;
+}
+.nav_gotocheck{
+	float: right;
+	display: block;
+	width: 47px;
+	text-align: center;
+	line-height: 30px;
+}
+.cart_pop {
+    background-color: #FFFFFF;
+    border: 2px solid #C90809;
+    border-top: none;
+    height: auto;
+    position: absolute;
+    right: -7px;
+    text-align: center;
+    top: 32px;
+    width: 250px;
+    display: none;
+}
+.cart_pop dl { border-bottom:1px solid #ccc;margin:10px 15px; padding-bottom:10px;line-height:14px;}
+.cart_pop dt { float:left; padding-right:10px;}
+.cart_pop dt img { padding:5px; background-color:#fff; border:1px solid #ddd;}
+.cart_pop dd { text-align:left;}
+.cart_pop span { color:#ff0000; margin-right:10px;}
+.price_cart { float:left; font-weight:bold;color:#cc0000;}
+.del_cart {float:right; }
+.add_cart { margin-bottom:15px; height:23px; width:96px; float:right; margin-right:10px;* margin-right:10px !important;* margin-right:5px; display:block;background-position:-0px -265px;  }	
+.cart_count { margin-bottom:10px; text-align:right; padding-right:10px;line-height: 20px;}
+.cart_count font { font-weight:bold; color:#cc0000; font-size:12px;}
+
+
+#subnav{width: 960px; height: 35px;line-height: 35px; margin: 0 auto;background-position: 0 -150px; color: #999;}
+#search_box{
+	float: left;
+	height: 23px;
+	width: 365px;
+	line-height: 23px;
+	margin: 5px 0 0 35px;}
+#keywords{
+	float: left;
+	height: 23px;
+	width: 280px;
+	background-color: transparent;
+    border: 0 none transparent;
+    font-size: 14px;
+    vertical-align: middle;
+    line-height: 23px;
+    color: #999;
+}
+a#search_submit{
+	float: right;
+	background: none;
+	height: 23px;
+	width: 80px;
+	display: block;
+	text-decoration: none;
+}
+#search_box
+.nav_pop {
+    background-color: #FFFFFF;
+    border-color: -moz-use-text-color #C90809 #C90809;
+    border-right: 2px solid #C90809;
+    border-style: none solid solid;
+    border-width: medium 2px 2px;
+    display: none;
+    height: auto;
+    padding-top: 10px;
+    position: absolute;
+    top: 31px;
+    width: 212px;
+}
+
+#footer_yell{float: left;border-bottom: solid 1px #e3e3e3;}
+#footer_help{float: left;background: #f9f9f9;padding: 10px 0;width: 100%;}
+.help_f{float: left;margin-left: 25px;width: 210px;display: inline;}
+.help_f a{color: #666;}
+.help_f h3{border-bottom: solid 1px #e3e3e3; height: 24px;color: #666;}
+.help_f ul{margin-top: 5px;}
+.help_f li {background-repeat: no-repeat; background-position: 0px -80px; line-height: 21px; padding-left: 8px; overflow: hidden; white-space: nowrap;}
+
+#fuckgfw{float: left;width: 100%;}
+#fuckgfw ul{margin: 0 0 0 230px;}
+#fuckgfw li{float: left;margin-left: 10px;}
+#fuckgfw_1{display: block;background-position: -646px 0;width: 108px;height: 40px;}
+#fuckgfw_2{display: block;background-position: -767px 0;width: 112px;height: 40px;}
+#fuckgfw_3{display: block;background-position: -892px 0;width: 108px;height: 40px;}
+
+#friend_links{float: left;width: 100%;line-height: 20px;padding: 10px 0;text-align: center;color: #999;}

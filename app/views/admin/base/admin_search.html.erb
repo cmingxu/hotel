@@ -1,0 +1,9 @@
+<h4>相关商品:</h4>
+<% @products.each do |product| %>
+	<a href="/products/<%= product.id %>"><%= product.title %></a><br />
+<% end %>
+
+<h4>相关品牌:</h4>
+<% @brands.each do |brand| %>
+	<a href="/brands/<%= brand.id %>"><%= brand.name %></a><br />
+<% end %>

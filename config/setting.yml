@@ -1,0 +1,25 @@
+attachment_max_size: 500000
+default_per_page_size: 20
+
+#设置新创建采购人用户是否需要注册
+new_purchaser_need_audit: true
+
+domain_name: www.jumaimai.com
+default_email: help@jumaimai.com
+
+seller_should_confirm_deliver_after: 7
+user_should_confirm_receive_after: 7
+user_should_mark_before: 7
+
+jmm_zhifubao_email: money@jumaimai.com
+jmm_zhifubao_password: 8log1pmcmdxzv8heep8zk87isxwe9kuh
+jmm_zhifubao_partnerid: 2088401357537841
+jmm_zhifubao_account: 北京麦浪科技有限公司
+
+#团购默认每天开始的钟点 10 / 00
+deal_open_hour: 00
+
+point_rule: 
+  invited_user_produce_income: 1 # 受邀请用户在网站消费金额与积分的比例
+  feed_back_point: 5 # 反馈
+

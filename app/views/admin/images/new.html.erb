@@ -1,0 +1,6 @@
+<h3>添加附件:</h3>
+
+<% form_for([@product,@asset],:html => {:multipart => true}) do |f|%>
+   <%= f.file_field :data %><br />
+   <%= submit_tag "确定" %>
+<%end%>

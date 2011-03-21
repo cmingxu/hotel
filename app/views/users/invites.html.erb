@@ -1,0 +1,9 @@
+我的邀请人：
+<%= current_user.invitee.nick || current_user.invitee.email rescue "未找到"%>
+
+我邀请了谁
+<% current_user.invited_users.each do |u| %>
+  <%= u.nick %>
+  <%= u.email %>
+  <%= u.created_at %>
+<%end%>

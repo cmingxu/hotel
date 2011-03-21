@@ -1,0 +1,5 @@
+<% form_for(@image, :url=> admin_image_path(@image), :html => {:multipart => true}) do |f|%>
+	 原文件:<%= image_tag @image.data.url(:m) %><br /><br />
+   替换文件:<%= f.file_field "pic"%><br />
+   <%= submit_tag "替换" %>
+<%end%>

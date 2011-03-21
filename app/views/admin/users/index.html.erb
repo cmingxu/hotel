@@ -1,0 +1,33 @@
+<h3 class='path'> 用户管理首页 </h3>
+
+<table class='j_table'>
+  <tr>
+    <th>nick</th>
+    <th>email</th>
+    <th>角色</th>
+    <th>操作</th>
+  </tr>
+
+  <% @users.each do |user| %>
+    <tr>
+      <td><%=h user.login %></td>
+      <td><%=h user.email %></td>
+      <td><%=h user.role %></td>
+      <td>
+        <% unless user.admin? %>
+          <%= link_to "设为管理" ,make_admin_admin_user_path(user),:method => :put%>
+        <% else %>
+          <%= link_to "取消管理" ,make_admin_admin_user_path(user),:method => :put%>
+        <% end %>
+      </td>
+
+
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+
+

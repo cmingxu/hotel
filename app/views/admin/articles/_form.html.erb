@@ -1,0 +1,29 @@
+<script type='text/javascript'>
+  show_kindeditor("kindeditor");
+
+</script>
+<tr>
+  <td class='tit'>
+    <%= f.label :title,"标题" %>
+  </td>
+  <td>
+    <%= f.text_field :title %>
+  </td>
+  <td class='tit'>
+    <label>发布</label>
+  </td>
+  <td>
+    <%= check_box_tag "check" ,"1","checked"%>
+  </td>
+</tr>
+<tr>
+  <td class='tit'>
+    <%= f.label :content,"内容" %><br />
+  </td>
+  <td colspan=3>
+    <%= f.text_area :content ,:id => "kindeditor"%>
+  </td>
+</tr>
+
+<tr>
+</tr>

@@ -1,0 +1,22 @@
+<p>
+  <b>标题:</b>
+  <%=h @article.title %>
+</p>
+
+<p>
+  <b>内容:</b>
+  <%= @article.content %>
+</p>
+
+<p>
+  <b>发布者:</b>
+  <%=h @article.created_by %>
+</p>
+
+<p>
+  <b>状态:</b>
+  <%=h @article.state %>
+</p>
+
+
+<%= link_to '编辑', edit_admin_article_path(@article) %> 

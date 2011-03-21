@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+  <meta name="author" content="" />
+  <meta name="copyright" content="Copyright (c) 2010-2010 Jumaimai. All rights reserved." />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Language" content="utf-8" />
+  <meta name="keywords" content= />
+  <meta name="description" content= />
+  <link rel="bookmark" href="/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="/favicon.gif" type="image/gif" />
+
+  <title></title>
+  <%= stylesheet_link_tag 'site.css', :media => 'screen, projection'%>
+  <%= stylesheet_link_tag 'header.css', :media => 'screen, projection'%>
+
+  <%= javascript_include_tag "jquery-1.4.3.min" %>
+  <%= javascript_include_tag "rails.jquery" %>
+  <%= javascript_include_tag 'jumaimai' %>
+	
+	<%= yield :add_javascript_css %>
+	
+  <% if protect_against_forgery? %>
+    <script type='text/javascript'>
+      //<![CDATA[
+    window._auth_token_name = "#{request_forgery_protection_token}";
+    window._auth_token = "#{form_authenticity_token}";
+    //]]>
+    </script>
+  <% end %>
+
+</head>
+<body>
+	<div id="page_top">
+		<div id="user_nav" class="t_gray">
+	     <%= render(:partial => "shared/user_session_indicator") %>
+	  </div>
+	</div>
+	<div id="header">
+    <div id="logo"><a href="/">&nbsp;</a></div>
+    <div id="header_right"><a href="/">&nbsp;</a></div>
+		<ul id="places_list">
+			<li class="ketin"><a href="/">&nbsp;</a></li>
+			<li class="woshi"><a href="/">&nbsp;</a></li>
+			<li class="chufan"><a href="/">&nbsp;</a></li>
+			<li class="gongzuoshi"><a href="/">&nbsp;</a></li>
+			<li class="yushi"><a href="/">&nbsp;</a></li>
+			<li class="dengguang"><a href="/">&nbsp;</a></li>
+			<li class="qiang"><a href="/">&nbsp;</a></li>
+			<li class="ertongfan"><a href="/">&nbsp;</a></li>
+			<li class="chexiang"><a href="/">&nbsp;</a></li>
+		</ul>
+  </div>
+  <div id="nav_box">
+    <div id="nav">
+      <ul id="nav_list">
+        <li id="index" class="current"><a href="/"><span>首页</span></a></li>
+        <li id="todaydelas">
+						<a href="/deals"><span>今日团购</span></a>
+				</li>
+        <li id=""><a href="/#"><span>推!我要开团!</span></a></li>
+        <li id="allproducts"><a href="/showinfo?type=wait"><span>晒单区</span></a></li>
+        <li id="allasks"><a href="/asks"><span>聚买卖答疑</span></a></li>
+        <li id="pages"><a href="/pages"><span>帮助中心</span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="subnav">
+		<div id="search_box">
+		<% form_tag search_path, :id=> "search_form", :method => 'GET' do %>
+			 <input id="keywords" name="keywords" type="text" value="商品名称、品牌" onfocus="javascript:if(this.value=='商品名称、品牌')this.value='';" onBlur="javascript:if(this.value=='')this.value='商品名称、品牌'" title="可输入商品名称、商品品牌进行搜索" />
+			 <a id="search_submit" href="#" onclick="submit_search();return false;">&nbsp;</a>
+		<% end %>
+		</div>
+  </div>
+
+  <div id="content">
+    <%= yield :layout %>
+		<div class="scroll_div" style="display: block;" onclick="document.documentElement.scrollTop=0;document.body.scrollTop=0;"></div>
+    <div class="clear"></div>
+  </div>
+
+  <div id="footer" class="clear">
+    <div id="footer_help">
+      <div class="help_f">
+        <h3>bid保障</h3>
+        <ul>
+          <li><a href="/pages/2">100%正品保障</a></li>
+          <li><a href="/pages/2">所有商品担保交易</a></li>
+          <li><a href="/pages/2">7天无理由退换货</a></li>
+        </ul>
+      </div>
+      <div class="help_f">
+        <h3>新手上路</h3>
+        <ul>
+          <li><a href="/pages/3">bid购物流程</a></li>
+          <li><a href="/pages/3">买家常见问题解答</a></li>
+          <li><a href="/pages/3">卖家常见问题解答</a></li>
+        </ul>
+      </div>
+     <div class="help_f">
+        <h3>关于bid</h3>
+        <ul>
+          <li><a href="/pages/5">关于我们</a></li>
+          <li><a href="/pages/5">联系bid</a></li>
+          <li><a href="/pages/7">开放API</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="copyright">
+      Copyright © 2010-2011 Bid.com. All rights reserved. 京ICP证2b2b2b2b2b号
+    </div>
+    <div id="fuckgfw">
+      <ul>
+        <li><a href="https://www.alipay.com/aip/aip_validate_list.htm?trust_id=AIP10013385" target="_blank"><img src="https://img.alipay.com/img/logo/aip/logo123x40.jpg"></a></li>
+        <li><a id="fuckgfw_1" class="fuckgfw_link" href="http://www.hd315.gov.cn/beian/view.asp" target="_blank"></a></li>
+        <li><a id="fuckgfw_2" class="fuckgfw_link" href="&nbsp;" onclick="return false;" target="_blank"></a></li>
+        <li><a id="fuckgfw_3" class="fuckgfw_link" href="http://fzp.bjhd.gov.cn/Default.aspx" target="_blank"></a></li>
+      </ul>
+    </div>
+    <div id="friend_links">
+      友情的链接: <a href="http://www.tuan800.com">团购网站大全</a> | <a href="http://t123.sohu.com/">搜狐团购导航</a> | <a href="http://sd.360.cn" target="_blank">360免费杀毒</a> | <a href="http://www.letyo.com" target="_blank">来优团购生活</a>
+      | <a href="http://www.tuanp.com" target="_blank">团购之家</a> | <a href="http://www.goutuan.net" target="_blank">团购导航网</a> | <a href="http://www.ttturn.com" target="_blank">团团转团购导航</a> | <a href="http://tuan.hao123.com" target="_blank">好123团购导航</a> | <a href="http://www.nduotuan.com" target="_blank">N多团</a> | <script src="http://exp.jiankongbao.com/loadtrace.php?host_id=5593&style=5" type="text/javascript"></script>
+    </div>
+  </div>
+	
+  <%= yield :javascript %>
+  <% if @navtag %>
+    <script type="text/javascript" charset="utf-8">
+      $('#nav .current').removeClass('current');
+      $('#<%= @navtag %>').addClass('current');
+      </script>
+    <% end %>
+    <% if @menutag %>
+      <script type="text/javascript" charset="utf-8">
+        $('.user_menu .current').removeClass('current');
+        $('#<%= @menutag %>').addClass('current');
+        </script>
+      <% end %>
+    </body>
+
+  </html>
+    <%= yield :layout %>

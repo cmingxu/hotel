@@ -1,0 +1,38 @@
+<p>
+  <b>Price:</b>
+  <%=h @room.price %>
+</p>
+
+<p>
+  <b>Online price:</b>
+  <%=h @room.online_price %>
+</p>
+
+<p>
+  <b>Price with breakfirst:</b>
+  <%=h @room.price_with_breakfirst %>
+</p>
+
+<p>
+  <b>Breakfirst price:</b>
+  <%=h @room.breakfirst_price %>
+</p>
+
+<p>
+  <b>Bed price:</b>
+  <%=h @room.bed_price %>
+</p>
+
+<p>
+  <b>Service price:</b>
+  <%=h @room.service_price %>
+</p>
+
+<p>
+  <b>Quantity:</b>
+  <%=h @room.quantity %>
+</p>
+
+
+<%= link_to 'Edit', edit_room_path(@room) %> |
+<%= link_to 'Back', rooms_path %>

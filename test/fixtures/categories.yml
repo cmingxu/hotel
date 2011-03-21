@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  ancestry: MyString
+
+two:
+  name: MyString
+  ancestry: MyString
+
+# == Schema Information
+#
+# Table name: categories
+#
+#  id         :integer(4)      not null, primary key
+#  name       :string(255)
+#  ancestry   :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+

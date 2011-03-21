@@ -1,0 +1,42 @@
+<% content_for :add_javascript_css do %> 
+  <%= javascript_include_tag 'formValidator' %>
+	<%= stylesheet_link_tag 'login.css', :media => 'screen, projection'%>
+	<%= stylesheet_link_tag 'validator.css', :media => 'screen, projection'%>
+<% end %>
+
+<% form_for resource_name, resource, :url => session_path(resource_name), :html => {:id=> "form1"} do |f| -%>
+<div id="loginbox">
+	<table id="login_header">
+		<tr><th><img src="/images/login_title.gif" /></th><td>立刻登录，享受家居精品的团购折扣和保障。</td></tr>
+	</table>
+	<table id="login" class="form">
+		<tr>
+			<th style="height:auto;"></th>
+			<td><%= f.error_messages %></td>
+		</tr>
+		<tr>
+			<th>邮箱:</th><td class="l_input"><%= f.text_field :email %><span id="user_emailTip"></span></td>
+		</tr>
+		<tr>
+			<th>密码:</th><td class="l_input"><%= f.password_field :password %><span id="user_passwordTip"></span></td>
+		</tr>
+		<tr><th style="height:25px;"></th><td class="gray" style="line-height:25px;"><%= f.check_box :remember_me, :checked => true %> &nbsp;下次自动登录&nbsp;</td></tr>
+		<tr><th></th>
+			<td>
+				<input type="submit" value="登&nbsp;录" name="commit" id="user_submit" class="reglogin_btn">
+				<a class="gray" href="/users/password/new">&nbsp;忘记密码?</a>
+			</td>
+		</tr>
+	</table>
+	<div id="login_right" class="gray">
+		还没有聚买卖帐号?
+		<a href="/users/sign_up" title="注册" class="sidebtn blue"><span>注&nbsp;册</span></a>
+	</div>
+</div>
+<% end -%>
+
+<script type="text/javascript" charset="utf-8">
+		$.formValidator.initConfig({formid:"form1",onerror:function(msg){alert('您的帐号密码有误，请您检查！');}});
+		$("#user_email").formValidator({onshow:"请输入邮箱",onfocus:"请输入注册邮箱",oncorrect:""}).inputValidator().regexValidator({regexp:"^\\w+((-\\w+)|(\\.\\w+))*\\@[A-Za-z0-9]+((\\.|-)[A-Za-z0-9]+)*\\.[A-Za-z0-9]+$",onerror:"邮箱格式不对"});
+		$("#user_password").formValidator({onshow:"请输入密码",onfocus:"密码为4位以上",oncorrect:""}).inputValidator({min:4,empty:{leftempty:false,rightempty:false,emptyerror:"密码不能有空格"},onerror:"密码格式错误"});
+</script>

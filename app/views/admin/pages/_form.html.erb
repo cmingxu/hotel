@@ -1,0 +1,37 @@
+<script type='text/javascript'>
+  show_kindeditor("kindeditor");
+</script>
+<tr>
+  <td class='tit'>
+    <%= f.label :slug,"链接地址" %>
+  </td>
+  <td>
+    <%= f.text_field :slug %>
+  </td>
+</tr>
+<tr>
+  <td class='tit'>
+    <%= f.label :content ,"内容"%>
+  </td>
+  <td>
+    <%= f.text_field :content ,:id => "kindeditor"%>
+  </td>
+</tr>
+<tr>
+  <td class='tit'>
+    <%= f.label :meta,"META" %>
+  </td>
+  <td>
+    <%= f.text_field :meta %>
+  </td>
+</tr>
+<tr>
+  <td class='tit'>
+    <%= f.label :description %>
+  </td>
+  <td>
+    <%= f.text_field :description %>
+  </td>
+</tr>
+</p>
+

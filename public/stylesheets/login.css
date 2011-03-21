@@ -1,0 +1,97 @@
+/* project bid login*/
+#loginbox {
+	float: left; 
+	width: 958px; 
+	border: solid 1px #e2e2e2;
+}
+#login_header {
+	float: left; 
+	width: 100%; 
+	line-height: 40px; 
+	border-bottom: solid 2px #e2e2e2; 
+	color: #999999;
+}
+#login_header th {
+	border-bottom: solid 2px #BE110D; 
+	text-align: center; 
+	width: 140px;
+}
+#login_header td {
+	padding: 10px 0 0px 0;
+}
+#login {
+	float: left; 
+	width: 550px; 
+	margin: 40px 10px 60px 80px; 
+	line-height: 50px;
+}
+#login th {
+	color: #666666; 
+	font-size: 14px; 
+	line-height: 18px; 
+	padding-right: 10px; 
+	height: 50px; 
+	width: 80px; 
+	vertical-align: middle; 
+	text-align: right; 
+	font-weight: normal;
+}
+.on_input {
+	background: #FAFAFA; 
+	border: solid 1px #BBB; 
+	color: #000; 
+	outline: solid 2px #e2e2e2;
+}
+.l_input input {
+	border: 1px solid #C5C5C5; 
+	color: #333333; 
+	font-family: Arial,Helvetica,sans-serif,"宋体"; 
+	margin: 0 5px 0 0; 
+	padding-left: 4px; 
+	vertical-align: middle; 
+	font-size: 18px; 
+	height: 28px; 
+	line-height: 28px; 
+	width: 290px;
+}
+#mycode {
+	width: 100px;
+}
+#captcha_img img {
+	vertical-align: middle;
+}
+.reglogin_btn {
+	background: url("/images/reglogin_btn.gif") no-repeat scroll 0 0 transparent; 
+	border: medium none; 
+	color: #FFFFFF; 
+	cursor: pointer; 
+	font-size: 14px; 
+	font-weight: bold; 
+	height: 35px; 
+	line-height: 35px; 
+	text-align: center; 
+	width: 96px;
+}
+#login_right {
+	float: left; 
+	width: 250px; 
+	height: 180px; 
+	padding: 5px 0 20px 45px; 
+	border-left: dashed 1px #E7E7E7; 
+	margin: 40px 0 0 0; 
+	line-height: 20px;
+}
+.sidebtn {
+	background: url("/images/rightbtn.gif") no-repeat scroll 0 0 transparent; 
+	display: block; 
+	height: 28px; 
+	margin: 5px 0 10px 0; 
+	padding: 5px 3px 0 5px; 
+	text-align: center; 
+	width: 92px;
+}
+.errorExplanation{
+	float: left;
+	width: 100%;
+	line-height: 24px;
+}

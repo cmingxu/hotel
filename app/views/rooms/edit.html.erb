@@ -1,0 +1,40 @@
+<h1>Editing room</h1>
+
+<% form_for(@room) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </p>
+  <p>
+    <%= f.label :online_price %><br />
+    <%= f.text_field :online_price %>
+  </p>
+  <p>
+    <%= f.label :price_with_breakfirst %><br />
+    <%= f.text_field :price_with_breakfirst %>
+  </p>
+  <p>
+    <%= f.label :breakfirst_price %><br />
+    <%= f.text_field :breakfirst_price %>
+  </p>
+  <p>
+    <%= f.label :bed_price %><br />
+    <%= f.text_field :bed_price %>
+  </p>
+  <p>
+    <%= f.label :service_price %><br />
+    <%= f.text_field :service_price %>
+  </p>
+  <p>
+    <%= f.label :quantity %><br />
+    <%= f.text_field :quantity %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @room %> |
+<%= link_to 'Back', rooms_path %>
