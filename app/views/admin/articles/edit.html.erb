@@ -1,6 +1,6 @@
 <h3 class='path'>编辑文章</h1>
 
-<% form_for(@article,:url => admin_articles_url(@article),:html => {:multipart => true}) do |f| %>
+<% form_for(@article,:url => admin_article_url(@article),:html => {:multipart => true}) do |f| %>
   <%= f.error_messages %>
 
   <%= render :partial => "form",:locals => {:f => f} %>

@@ -15,9 +15,9 @@
       <td><%=h article.created_by_who %></td>
       <td><%=h article.last_edit_by_who %></td>
       <td><%=h display_article_state(article.state) %></td>
-      <td>  <%= link_to '查看', article %>
-        <%= link_to '修改', edit_article_path(article) %>
-        <%= link_to '删除', article, :confirm => '我要删除此文章?', :method => :delete %>
+      <td>  <%= link_to '预览', article %>
+        <%= link_to '修改', edit_admin_article_path(article) %>
+        <%= link_to '删除', admin_article_path(article), :confirm => '我要删除此文章?', :method => :delete %>
         <% unless article.hide? %>
           <%= link_to '隐藏', hide_admin_article_path(article),  :method => :put%>
         <% else %>

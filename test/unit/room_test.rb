@@ -7,6 +7,9 @@ class RoomTest < ActiveSupport::TestCase
   end
 end
 
+
+
+
 # == Schema Information
 #
 # Table name: rooms
@@ -21,5 +24,12 @@ end
 #  quantity              :integer(4)
 #  created_at            :datetime
 #  updated_at            :datetime
+#  name                  :string(255)
+#  cate                  :string(255)
+#  desc                  :text
+#  icon_file_name        :string(255)
+#  icon_content_type     :string(255)
+#  icon_file_size        :integer(4)
+#  icon_updated_at       :datetime
 #
 

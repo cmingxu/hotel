@@ -1,0 +1,13 @@
+<h3 class='path'>新建设施</h3>
+
+<% form_for(@room,:url => admin_rooms_url,:html => {:multipart => true}) do |f| %>
+  <%= f.error_messages %>
+  <table class='j_table'>
+    <%= render :partial => "form",:locals => {:f => f}%>
+  </table>
+
+  <p>
+  <%= f.submit '新建' %>
+  </p>
+<% end %>
+

@@ -1,4 +1,6 @@
 class Page < ActiveRecord::Base
+  has_many :images,:as => :owner
+
   def to_param
     self.slug or self.id
   end

@@ -1,0 +1,11 @@
+<h1>Editing room</h1>
+
+<% form_for(@room,:url => admin_room_url(@room),:html => {:multipart => true}) do |f| %>
+  <%= f.error_messages %>
+  <table class='j_table'>
+    <%= render :partial => "form",:locals => {:f => f}%>
+  </table>
+
+  <%= f.submit '更新' %>
+<% end %>
+

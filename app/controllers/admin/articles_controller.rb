@@ -54,9 +54,9 @@ class Admin::ArticlesController <  Admin::BaseController
 
     respond_to do |format|
       if @article.save
+
         @article.created_by= current_user.id
         @article.save
-
         format.html { redirect_to(admin_article_path(@article), :notice => 'Article was successfully created.') }
         format.xml  { render :xml => @article, :status => :created, :location => @article }
       else

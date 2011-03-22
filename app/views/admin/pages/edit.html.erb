@@ -4,13 +4,12 @@
   <%= f.error_messages %>
   <table class='j_table'>
 
-  <%= render :partial => 'form',:locals => {:f => f}%>
-  <tr>
-    <td colspan=2>
-    <%= f.submit '更新' %>
-  </td>
-  </tr>
-</table>
+    <%= render :partial => 'form',:locals => {:f => f}%>
+    <tr>
+      <td colspan=2>
+        <%= f.submit '更新' %>
+      </td>
+    </tr>
+  </table>
 <% end %>
 
-<%= link_to '预览', @page,:target => "_blank" %> 

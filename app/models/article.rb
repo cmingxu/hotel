@@ -1,4 +1,5 @@
 class Article < ActiveRecord::Base
+  has_many :images,:as => :owner
 
   def created_by_who
     User.find(self.created_by).login rescue "未找到"

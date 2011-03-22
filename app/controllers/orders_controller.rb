@@ -1,83 +1,115 @@
 class OrdersController < ApplicationController
-  # GET /orders
-  # GET /orders.xml
+  before_filter :authenticate_user!
+  #before_filter :make_sure_order_ownership
+
   def index
-    @orders = Order.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @orders }
-    end
+    @orders = current_user.orders
   end
 
-  # GET /orders/1
-  # GET /orders/1.xml
   def show
-    @order = Order.find(params[:id])
+    @order = current_user.orders.find(params[:id])
+  end
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @order }
+  def close
+    @order = current_user.orders.find(params[:id])
+    if @order.close!
+      flash[:notice] = ' 订单取消'
+    else
+      flash[:notice] = ' 订单取消失败'
     end
+
+    redirect_to orders_path
   end
 
-  # GET /orders/new
-  # GET /orders/new.xml
-  def new
-    @order = Order.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @order }
+  def confirm
+    @order = current_user.orders.find(params[:id])
+    if @order.confirm!
+      flash[:notice] = ' 确认订单成功'
+    else
+      flash[:notice] = ' 订单确认失败'
     end
+
+    redirect_to order_path(@order)
   end
 
-  # GET /orders/1/edit
-  def edit
+  def pay_by_credit
     @order = Order.find(params[:id])
-  end
-
-  # POST /orders
-  # POST /orders.xml
-  def create
-    @order = Order.new(params[:order])
-
-    respond_to do |format|
-      if @order.save
-        format.html { redirect_to(@order, :notice => 'Order was successfully created.') }
-        format.xml  { render :xml => @order, :status => :created, :location => @order }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @order.errors, :status => :unprocessable_entity }
+    if current_user.credits < @order.total_price
+      flash[:notice] = "账户余额不足，　请您充值。"
+    else
+      Order.transaction do
+        current_user.adjust_credit(-@order.total_price,"用户购买通过余额支付了订单#{@order.order_number}总计#{@order.total_price}元")
+        @order.pay!
+        flash[:notice] = "支付成功"
       end
     end
   end
 
-  # PUT /orders/1
-  # PUT /orders/1.xml
-  def update
-    @order = Order.find(params[:id])
 
-    respond_to do |format|
-      if @order.update_attributes(params[:order])
-        format.html { redirect_to(@order, :notice => 'Order was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @order.errors, :status => :unprocessable_entity }
-      end
+  def pay
+    @order = current_user.orders.find(params[:id])
+    redirect_to products_url unless @order.new? or @order.delivered?
+    redirect_to  pay_request_url
+  end
+
+
+  #  # 用户支付后的返回页面。 （也可以不返回 ，按照原型上来说是不返回的）
+  def online_pay_result
+    result = Alipay::Return.new(request.query_string)
+    @order = Order.find(result.order)
+    if result.success?
+      flash[:notice] = "支付成功!"
+    else
+      logger.info request.query_string
+      logger.warn result.message
+      flash[:notice] = "支付失败!"
     end
   end
 
-  # DELETE /orders/1
-  # DELETE /orders/1.xml
-  def destroy
-    @order = Order.find(params[:id])
-    @order.destroy
+  # 支付宝回访通知地址
+  def notify_result
+    notification = Alipay::Notification.new(request.raw_post)
+    @order = Order.find(notification.order)
+    # 钱少了也不算支付成功
 
-    respond_to do |format|
-      format.html { redirect_to(orders_url) }
-      format.xml  { head :ok }
+    if notification.acknowledge && notification.complete? && (notification.amount * 100).ceil >= (@order.total * 100).ceil
+      @order.pay!
+      PAYMENT_LOG.info "[SUCCESS]"
+      render :text => "success"
+    else
+      PAYMENT_LOG.info "[FAILED]"
+      render :text => "fail"
     end
   end
+
+
+
+  # private
+
+  def pay_request_url
+    request_url = Alipay::Helper.new(@order.order_number,Alipay::ACCOUNT,
+                                     :amount => @order.total_price) do |service| 
+      service.total_fee @order.total_price 
+      service.seller :email => Alipay::EMAIL.to_s
+      service.notify_url  expand_request_path(notify_result_order_url(@order))
+      service.return_url  expand_request_path(online_pay_result_order_url(@order))
+      service.show_url  expand_request_path(order_url(@order))
+      service.body @order.order_number
+      service.charset "utf-8" 
+      service.service Alipay::CREATE_DIRECT_PAY_BY_USER 
+      service.payment_type 1 
+      service.subject @order.order_number
+      service.sign
+                                     end
+    Alipay.service_url + "?" +  request_url.to_request_query
+  end
+
+  def expand_request_path(uri)
+    #"http://" + Setting.domain_name + uri
+    uri
+  end
+
+
+
+
 end

@@ -1,0 +1,33 @@
+<h3 class='path'>图片展示</h3>
+
+
+<table class='j_table'>
+
+  <% @images.each_slice(6) do |six|%>
+    <tr>
+      <% six.each do |one| %>
+        <td><%= image_tag one.icon.url(:s)%></td>
+      <%end%>
+    </tr>
+  <% end %>
+
+</table>
+
+
+<table class='j_table'>
+  <% form_tag(admin_images_url, :multipart => true) do  %>
+    <tr>
+      <td class='tit'>图片</td>
+      <td> <%= file_field_tag "pic"%></td>
+    </tr>
+    <tr>
+      <td class='tit'>描述</td>
+      <td> <%= text_field_tag "desc","",:style => "width:100%;height:100%;" %></td>
+    </tr>
+    <tr>
+      <td colspan=2> <%= submit_tag "提交" %></td>
+    </tr>
+
+  <%end%>
+
+</table>
