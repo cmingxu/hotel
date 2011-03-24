@@ -1,10 +1,15 @@
-<h1>Listing orders</h1>
+<h3 class='path'>订单列表</h3>
 
-<table>
+<table class='j_table'>
   <tr>
-    <th>Order number</th>
-    <th>Price</th>
-    <th>State</th>
+    <th>订单号</th>
+    <th>下单时间</th>
+    <th>房间类型</th>
+    <th>入住时间</th>
+    <th>退房时间</th>
+    <th>房间数</th>
+    <th>联系人</th>
+    <th>联系电话</th>
   </tr>
 
 <% @orders.each do |order| %>
@@ -12,13 +17,8 @@
     <td><%=h order.order_number %></td>
     <td><%=h order.price %></td>
     <td><%=h order.state %></td>
-    <td><%= link_to 'Show', order %></td>
-    <td><%= link_to 'Edit', edit_order_path(order) %></td>
-    <td><%= link_to 'Destroy', order, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to '详请', admin_order_path(order) %></td>
   </tr>
 <% end %>
 </table>
 
-<br />
-
-<%= link_to 'New order', new_order_path %>

@@ -1,0 +1,152 @@
+/**********************************
+
+Use: Reset Styles for all browsers
+
+***********************************/
+	div,ul,li,a,h1,h2,h3,h4,h5,h6,blockquote,form,tbody,table,form.tobody,img{ padding:0px; margin:0px; border:0px;}
+body{padding:0px; margin:0px;  font-size:12px;}
+#wrap{ width:1024px; margin:0px auto;}
+#und{ text-decoration:underline;}
+  .c_both{ clear:both;} 
+  .w1{ width:600px; padding:10px;}
+   .text_right{ text-align:right;}
+   .text_center{ text-align:center;}
+  .p_style{ font-weight:bold; padding:10px 0px;}
+   .p_img{ margin-right:10px;}
+  .w_sty{width:100%;}
+  .p_w{width:720px; border-bottom:2px solid ccc; padding:2px 15px;}
+  hr{ padding:0px; margin:5px auto; width:95%; color:#eaeaea;}
+.btn{ padding:2px 5px;}
+.aa{ padding:2px 10px;} 
+.cc{ padding:0px 5px;}
+.p_indent{ text-indent:2em; line-height:25px;}
+.t_center td{ text-align:center;}
+a img, iframe { border: none; }
+.border_none{ border:none;}
+	.border_one{ border:1px solid #666; }
+	#table1 img{ list-style:none;}
+	.f_left{ float:left;}
+	.f_right{ float:right;}
+	.c_both{ clear:both;}
+/* Headers
+------------------------------*/
+
+h1, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
+}
+
+h1 { font-size: 150%; }
+h2 { font-size: 140%;}
+h3 { font-size: 130%; }
+h4 { font-size: 120%; }
+
+h5 { font-size: 110%; height:30px; line-height:30px; }
+	
+/* Lists
+------------------------------*/
+	
+ul, ol, dl, li, dt, dd {
+	margin: 0;
+	padding: 0;
+}
+	
+/* Links
+------------------------------*/
+  a{ text-decoration:none;font-family:Arial, Helvetica, sans-serif;}
+  a:link    { color:#003 }    /* unvisited links */  
+  a:visited { color:#036}   /* visited links   */  
+  a:hover   { color:#000; font-family:Arial, Helvetica, sans-serif; } /* user hovers     */  
+  a:active  { color:#666 }   /* active links    */  
+    /* Forms
+------------------------------*/
+
+form, fieldset {
+	margin: 0;
+	padding: 0;
+}
+	
+fieldset { border: 1px solid #000; }
+
+legend {
+	padding: 0;
+	color: #000;
+}
+
+input, textarea, select {
+	margin: 0;
+	padding: 1px;
+	font-size: 100%;
+	font-family: inherit;
+}
+	
+select { padding: 0; } 
+	
+p { margin: 10px 0; }
+
+li { margin-left: 10px; }
+
+h3 { margin: 5px 0; }
+
+.red { background-color: red; }
+.blue { color: blue; }
+.green { color: green; }
+
+#rating {
+	border: 1px solid black;
+	margin: 5px;
+	padding: 5px;
+}
+
+table {
+	border: 1px solid #666;
+	margin: 0px 0 10px 0 !important;
+}
+
+th, td {
+	padding: 2px 4px 2px 4px !important; 
+	vertical-align: top;
+}
+
+th {
+	background-color: #12BCE8;
+	color:#FFF;
+	text-align:center;
+}
+
+th:hover {
+	background-color: #005BAB;
+}
+
+tbody tr.even {
+	background-color: #fea
+}
+
+tr a {
+	color: rgb(102, 102, 102);
+	text-decoration: none;
+}
+tr a:hover {
+	text-decoration: underline;
+}
+
+dl dd {
+	margin-left: 10px;
+}
+
+dl dt {
+	font-weight: bold;
+}
+
+dl {
+	border: 1px solid black;
+	margin: 5px;
+}
+
+.highlight {
+	border: 5px dotted #eee;
+}
+
+.error {
+	background-color: #fee;
+}

@@ -2,6 +2,7 @@ class RoomsController < ApplicationController
   # GET /rooms
   # GET /rooms.xml
   def index
+     @search = Room.search(params[:search])
     @rooms = Room.all
 
     respond_to do |format|

@@ -2,9 +2,10 @@
 
 <table class='j_table'>
   <tr>
+    <th>设施类别</th>
     <th>名称</th>
+    <th>价格</th>
     <!--
-    <th>Price</th>
     <th>Online price</th>
     <th>Price with breakfirst</th>
     <th>Breakfirst price</th>
@@ -17,9 +18,10 @@
 
 <% @rooms.each do |room| %>
   <tr>
+    <td><%=h Room::ROOM_CATE[room.cate.to_sym]%></td>
     <td><%=h room.name%></td>
+    <td><%=h room.price %> 元/天</td>
     <!--
-    <td><%=h room.price %></td>
     <td><%=h room.online_price %></td>
     <td><%=h room.price_with_breakfirst %></td>
     <td><%=h room.breakfirst_price %></td>
@@ -29,6 +31,7 @@
     <td><%=h room.quantity %></td>
     <td><%= link_to '预览', room,:target => "_blank" %>
     <%= link_to '修改', edit_admin_room_path(room) %>
+    <%= link_to '查看订单', admin_room_orders_path(room) %>
     <%= link_to '删除', admin_room_path(room), :confirm => '确信要删除?', :method => :delete %></td>
   </tr>
 <% end %>

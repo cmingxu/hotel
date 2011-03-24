@@ -1,0 +1,51 @@
+@charset "utf-8";
+/* CSS Document */ 
+body{font-family:"新宋体";}
+.clear{clear:both;}
+/*header*/
+.header{ width:1003px; height:115px; margin:0px auto; border-bottom:#F7EDC7 solid 1px;}  
+.logo{width:105px; height:106px; float:left;}
+.menu{width:833px; height:27px; float:left; margin-top:75px; margin-left:65px;}
+.menu ul{margin:0 auto; margin-left:0px; list-style:none; list-style-type:none; padding:0;}
+.menu li{ float:left; height:27px; padding:0px; list-style:none; list-style-type:none; margin:0px;}
+.menu li a{font-size:16px; color:#C7A75E; font-weight:bold; line-height:27px; display:block; width:90px; height:27px; text-align:center; }
+.menu li a:hover{color:#FFFFFF; background:url(../images/menu_link.png) no-repeat; text-decoration:none;}
+
+.lunzu{ margin:0 auto;width:1003px; height:380px; background-color:#A07E03; border-top:#FCD23E 1px solid;}
+.lunzu_img{ margin:0 auto;width:983px; height:360px; text-align:center; padding-top:10px;}
+
+.News{width:918px; margin:0 auto; margin-top:10px;}
+.ylhotel{width:600px; float:left;}
+.ylhotel_nav{width:541px; height:29px; margin:0 auto; background-image:url(../images/ylhotel.png); background-repeat:no-repeat; line-height:29px; font-size:16px; color:#C7A75E; text-decoration:none; padding-left:59px; font-weight:bold;}
+
+.ylhotel_line{ width:600px; background-image:url(../images/line.png); background-repeat:no-repeat; height:2px; margin-top:5px;}
+.ylhotel_con{font-size:14px; color:#333333; line-height:24px; padding-top:10px; width:600px; padding-left:15px;}
+.ylhotel_con a{font-size:12px; color:#333333; line-height:24px; text-decoration:none; margin-left:50px;}
+.ylhotel_con a:hover{color:#D30505; text-decoration:none;}
+
+.News_list{width:283px; float:left; margin-left:33px;}
+.ylhotel_news{width:248px; height:29px; margin:0 auto; background-image:url(../images/new.png); background-repeat:no-repeat; line-height:29px; font-size:16px; color:#C7A75E; text-decoration:none; padding-left:35px; font-weight:bold;}
+
+.ylhotel_news_line{ width:283px; background-image:url(../images/line.png); background-repeat:no-repeat; height:2px; margin-top:5px;}
+.ylhotel_news_list{padding-top:10px; width:283px;}
+.ylhotel_news_list ul{list-style:none; list-style-type:none; margin:0; padding:0;}
+.ylhotel_news_list li{
+font-size:12px; color:#333333; line-height:18px;
+background-image:url(../images/dian.jpg);
+background-repeat:no-repeat;
+background-position:5px 3px;
+padding-left:17px;
+padding-bottom:6px;
+}
+.ylhotel_news_list li a{font-size:12px; color:#333333; line-height:18px; text-decoration:none;}
+.ylhotel_news_list li a:hover{color:#B81F12; text-decoration:none;}
+
+.ylhotel_news_more {width:283px; margin:0 auto; height:18px;}
+.ylhotel_news_more span{float:right; margin-right:20px;}
+.ylhotel_news_more span a{font-size:12px; color:#333333; line-height:18px; text-decoration:none}
+.ylhotel_news_more span a:hover{color:#B81F12; text-decoration:none;}
+
+.bottom_line{ margin:0 auto;width:918px; height:4px; background-image:url(../images/bottom.jpg); background-repeat:no-repeat; margin-top:25px;}
+.bottom{font-size:14px; line-height:21px; color:#9A7E51; width:918px; margin:0 auto; text-align:center; margin-bottom:5px; margin-top:10px;}
+
+

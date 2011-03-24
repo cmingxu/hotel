@@ -6,7 +6,7 @@
     <%= f.label :icon,"图片"%>
   </td>
   <td>
-     <%= image_tag(f.object.icon.url(:s)) if  f.object.icon%><%= f.file_field :icon%>
+     <%= image_tag(f.object.icon.url(:s)) if  f.object.icon_file_name%><%= f.file_field :icon%>
   </td>
 </tr>
 

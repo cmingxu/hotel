@@ -4,6 +4,7 @@ class WelcomeController < ApplicationController
     @xurl = "http://www.jumaimai.com"
     @xtitle = "一个叫聚买卖的商城，所有东西都能团购...你注册我就有积分..."
     @xcont = "http://www.jumaimai.com | 一个叫聚买卖的商城，所有东西都能团购...你注册我就有积分..."
+    render :layout =>  false
   end
 
   def reset_session #insub 这个是干嘛用的?

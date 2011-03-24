@@ -10,7 +10,8 @@ ActionController::Routing::Routes.draw do |map|
   map.namespace :admin do |admin|
     admin.resources :pages,:except => [:destroy]
     admin.resources :images
-    admin.resources :rooms
+    admin.resources :orders
+    admin.resources :rooms ,:has_many => :orders
     admin.resources :categories
     admin.resources :articles,:member => {:publish => :put,:hide => :put}
     admin.resources :users,:member => {:make_admin => :put }
